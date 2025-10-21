@@ -1,1 +1,0 @@
-up 19/10 dedos cruzados

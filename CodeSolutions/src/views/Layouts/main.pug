@@ -1,0 +1,21 @@
+//- Layout principal
+doctype html
+html(lang="es")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title= tituloSitio || 'Code Solutions'
+    link(rel="stylesheet", href="/css/styles.css")  
+  body
+    //- Incluir el header
+    include header.pug
+
+    //- Contenido específico de cada página
+    main
+      block contenido
+
+    //- Incluir el footer
+    include footer.pug
+
+    //- Scripts 
+    script(src="/js/main.js")

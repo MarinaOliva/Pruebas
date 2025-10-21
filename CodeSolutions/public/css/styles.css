@@ -1,0 +1,206 @@
+/* =========================
+   Reset y básicos
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   Layout
+========================= */
+header, footer {
+  background-color: #2c3e50;
+  color: #fff;
+  padding: 1rem 2rem;
+}
+
+main {
+  padding: 2rem;
+  min-height: calc(100vh - 120px); /* Ajustar según header/footer */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Botones
+========================= */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+}
+
+/* =========================
+   Formularios
+========================= */
+form {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+/* Formularios de acción inline (editar, eliminar en listas) */
+form.form-inline {
+  display: inline;
+  background: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: none;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin: 0.5rem 0 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.empleados-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 0.5rem;
+}
+
+.empleados-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.checkbox-item input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+
+
+/* =========================
+   Tablas
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: #fff;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  background-color: #2980b9;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+/* =========================
+   Mensajes de error / éxito
+========================= */
+.alert {
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.alert-error {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.alert-success {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+/* =========================
+   Menú / navegación
+========================= */
+.menu {
+  margin-top: 2rem;
+}
+
+.menu a {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.menu a:hover {
+  background-color: #2980b9;
+}
+
+/* =========================
+   Footer
+========================= */
+footer p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  header, footer {
+    text-align: center;
+  }
+
+  .menu a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

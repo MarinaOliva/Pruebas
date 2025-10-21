@@ -1,0 +1,38 @@
+extends ../layouts/main
+
+block contenido
+  h1 Nuevo Proyecto
+
+  form(action="/proyectos/crear" method="POST")
+    div.form-group
+      label(for="nombre") Nombre del proyecto
+      input.form-control(type="text" name="nombre" id="nombre" required value=datos && datos.nombre ? datos.nombre : '')
+
+    div.form-group
+      label(for="cliente") Cliente
+      input.form-control(type="text" name="cliente" id="cliente" required value=datos && datos.cliente ? datos.cliente : '')
+
+    div.form-group
+      label(for="estado") Estado
+      select.form-control(name="estado" id="estado" required)
+        each estado in estadosValidos
+          option(value=estado selected=(datos && datos.estado === estado))= estado
+
+    div.form-group
+      label(for="descripcion") Descripción
+      textarea.form-control(name="descripcion" id="descripcion" rows="3")= datos && datos.descripcion ? datos.descripcion : ''
+
+    div.form-group
+      label Empleados asignados
+      div.empleados-checkboxes
+        if empleados && empleados.length > 0
+          each empleado in empleados
+            label.checkbox-item
+              input(type="checkbox" name="empleadosAsignados" value=empleado.id checked=(datos && datos.empleadosAsignados && datos.empleadosAsignados.includes(empleado.id)))
+              | #{empleado.nombre} (#{empleado.rol})
+
+        else
+          p No hay empleados disponibles
+
+    button.btn.btn-primary(type="submit") Crear Proyecto
+    a.btn.btn-secondary(href="/proyectos") Cancelar

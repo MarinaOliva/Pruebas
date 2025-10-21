@@ -1,0 +1,45 @@
+extends ../layouts/main
+
+block contenido
+  h1 Lista de Tareas
+
+  a.btn.btn-primary.mb-3(href="/tareas/crear") + Crear Tarea
+
+  if tareas && tareas.length > 0
+    table.table.table-striped
+      thead
+        tr
+          th Nombre
+          th Proyecto
+          th Estado
+          th Horas Estimadas
+          th Horas Registradas
+          th Empleados
+          th Acciones
+      tbody
+        each tarea in tareas
+          tr
+            td= tarea.nombre
+            td
+              - const proyecto = proyectos.find(p => p.id === tarea.proyectoId)
+              = proyecto ? proyecto.nombre : 'No asignado'
+            td= tarea.estado
+            td= tarea.horasEstimadas
+            td= tarea.horasRegistradas
+            td
+              - if (tarea.empleadosAsignados && tarea.empleadosAsignados.length > 0)
+                - const nombresEmpleados = tarea.empleadosAsignados.map(id => {
+                -   const e = empleados.find(emp => emp.id === id)
+                -   return e ? `${e.nombre} (${e.rol})` : 'No asignado'
+                - })
+                = nombresEmpleados.join(', ')
+              - else
+                | No asignado
+            td
+              // Solo mostrar Editar y Eliminar si la tarea NO está eliminada ni finalizada
+              if tarea.estado !== 'Eliminada' && tarea.estado !== 'Finalizado'
+                a.btn.btn-sm.btn-warning(href=`/tareas/editar/${tarea.id}`) Editar
+                form.form-inline(action=`/tareas/eliminar/${tarea.id}?_method=DELETE` method="POST" style="display:inline")
+                  button.btn.btn-sm.btn-danger.btn-eliminar(type="submit") Eliminar
+  else
+    p.aviso No hay tareas registradas.

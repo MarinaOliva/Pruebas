@@ -1,0 +1,38 @@
+extends ../layouts/main
+//- Formulario para crear empleado
+block contenido
+  h1 Nuevo Empleado
+  if error
+    p.error #{mensaje}
+
+  form(action="/empleados/crear", method="POST")
+    label Nombre:
+    input(type="text", name="nombre", value=(datos && datos.nombre) || '')
+
+    label Email:
+    input(type="email", name="email", value=(datos && datos.email) || '')
+
+    label Rol:
+    select(name="rol")
+      option(value="administrador", selected=(datos && datos.rol) === 'administrador') Administrador
+      option(value="desarrollador", selected=(datos && datos.rol) === 'desarrollador') Desarrollador
+      option(value="QA", selected=(datos && datos.rol) === 'QA') QA
+      option(value="DevOps", selected=(datos && datos.rol) === 'DevOps') DevOps
+      option(value="soporte", selected=(datos && datos.rol) === 'soporte') Soporte
+      option(value="contador", selected=(datos && datos.rol) === 'contador') Contador
+
+    label Área:
+    select(name="area")
+      option(value="Desarrollo", selected=(datos && datos.area) === 'Desarrollo') Desarrollo
+      option(value="Administración", selected=(datos && datos.area) === 'Administración') Administración
+      option(value="Soporte", selected=(datos && datos.area) === 'Soporte') Soporte
+      option(value="Contabilidad", selected=(datos && datos.area) === 'Contabilidad') Contabilidad
+
+    label Especialidad:
+    input(type="text", name="especialidad", value=(datos && datos.especialidad) || '')
+
+    label Habilidades (separadas por coma):
+    input(type="text", name="habilidades", value=(datos && datos.habilidades ? datos.habilidades.join(', ') : ''))
+
+    button.btn.btn-primary(type="submit") Guardar
+    a.btn.btn-secondary(href="/empleados") Cancelar

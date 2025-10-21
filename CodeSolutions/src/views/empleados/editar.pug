@@ -1,0 +1,39 @@
+//- Formulario para editar empleado
+extends ../layouts/main
+
+block contenido
+  h1 Editar Empleado
+  if error
+    p.error #{mensaje}
+
+  form(action=`/empleados/editar/${empleado.id}?_method=PUT`, method="POST")
+    label Nombre:
+    input(type="text", name="nombre", value=empleado.nombre)
+
+    label Email:
+    input(type="email", name="email", value=empleado.email)
+
+    label Rol:
+    select(name="rol")
+      option(value="administrador", selected=empleado.rol==='administrador') Administrador
+      option(value="desarrollador", selected=empleado.rol==='desarrollador') Desarrollador
+      option(value="QA", selected=empleado.rol==='QA') QA
+      option(value="DevOps", selected=empleado.rol==='DevOps') DevOps
+      option(value="soporte", selected=empleado.rol==='soporte') Soporte
+      option(value="contador", selected=empleado.rol==='contador') Contador
+
+    label Área:
+    select(name="area")
+      option(value="Desarrollo", selected=empleado.area==='Desarrollo') Desarrollo
+      option(value="Administración", selected=empleado.area==='Administración') Administración
+      option(value="Soporte", selected=empleado.area==='Soporte') Soporte
+      option(value="Contabilidad", selected=empleado.area==='Contabilidad') Contabilidad
+
+    label Especialidad:
+    input(type="text", name="especialidad", value=empleado.especialidad)
+
+    label Habilidades (separadas por coma):
+    input(type="text", name="habilidades", value=empleado.habilidades.join(', '))
+
+    button.btn.btn-primary(type="submit") Guardar cambios
+    a.btn.btn-secondary(href="/empleados") Cancelar

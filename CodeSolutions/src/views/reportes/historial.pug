@@ -1,0 +1,19 @@
+extends ../layouts/main
+block contenido
+  h1 Historial de Reportes
+
+  table
+    thead
+      tr
+        th ID
+        th Tipo
+        th Fecha
+        th Acciones
+    tbody
+      each r in reportes
+        tr
+          td #{r.id}
+          td #{r.tipo}
+          td #{new Date(r.fechaGeneracion).toLocaleString()}
+          td 
+            a(href=`/reportes/detalle/${r.id}`) Ver detalle

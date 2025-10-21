@@ -1,0 +1,1082 @@
+[
+  {
+    "id": "r1a2b3c4-5678-90ab-cdef-1234567890r1",
+    "tipo": "Horas trabajadas por empleado",
+    "fechaGeneracion": "2025-09-18T20:00:00.000Z",
+    "contenido": [
+      {
+        "empleadoId": "a1f2d3c4-5678-90ab-cdef-1234567890ab",
+        "nombreEmpleado": "Lucía Fernández",
+        "horasRegistradasTotales": 6,
+        "tareas": [
+          {
+            "tareaId": "t1a2b3c4-5678-90ab-cdef-1234567890t1",
+            "nombreTarea": "Diseño de base de datos",
+            "horasRegistradas": 2
+          },
+          {
+            "tareaId": "t4d5e6f7-8901-23de-fabc-4567890123t4",
+            "nombreTarea": "Maquetación de interfaz",
+            "horasRegistradas": 4
+          }
+        ]
+      },
+      {
+        "empleadoId": "b2e3f4d5-6789-01bc-defa-2345678901bc",
+        "nombreEmpleado": "Martín Rojas",
+        "horasRegistradasTotales": 1,
+        "tareas": [
+          {
+            "tareaId": "t3c4d5e6-7890-12cd-efab-3456789012t3",
+            "nombreTarea": "Configuración de reportes de ventas",
+            "horasRegistradas": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "r2b3c4d5-6789-01bc-defa-2345678901r2",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-18T20:05:00.000Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      }
+    ]
+  },
+  {
+    "id": "2eace77c-c50c-46fc-8b2e-8d294b2b5efc",
+    "tipo": "Horas trabajadas por empleado",
+    "fechaGeneracion": "2025-09-21T06:31:13.793Z",
+    "contenido": [
+      {
+        "empleadoId": "a1f2d3c4-5678-90ab-cdef-1234567890ab",
+        "nombreEmpleado": "Lucía Fernández",
+        "horasRegistradasTotales": 7,
+        "tareas": [
+          {
+            "tareaId": "t3c4d5e6-7890-12cd-efab-3456789012t3",
+            "nombreTarea": "Configuración de reportes de ventas",
+            "horasRegistradas": 1
+          },
+          {
+            "tareaId": "t4d5e6f7-8901-23de-fabc-4567890123t4",
+            "nombreTarea": "Maquetación de interfaz",
+            "horasRegistradas": 6
+          }
+        ]
+      },
+      {
+        "empleadoId": "b2e3f4d5-6789-01bc-defa-2345678901bc",
+        "nombreEmpleado": "Martín Rojas",
+        "horasRegistradasTotales": 13,
+        "tareas": [
+          {
+            "tareaId": "t4d5e6f7-8901-23de-fabc-4567890123t4",
+            "nombreTarea": "Maquetación de interfaz",
+            "horasRegistradas": 6
+          },
+          {
+            "tareaId": "t5e6f7g8-9012-34ef-abcd-5678901234t5",
+            "nombreTarea": "Pruebas unitarias backend",
+            "horasRegistradas": 7
+          }
+        ]
+      },
+      {
+        "empleadoId": "c3f4g5h6-7890-12cd-efab-3456789012cd",
+        "nombreEmpleado": "Valentina Gómez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "d4g5h6i7-8901-23de-fabc-4567890123de",
+        "nombreEmpleado": "Javier Méndez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "e5h6i7j8-9012-34ef-abcd-5678901234ef",
+        "nombreEmpleado": "Camila Torres",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "f6i7j8k9-0123-45fa-bcde-6789012345fa",
+        "nombreEmpleado": "Diego Castro",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "g7j8k9l0-1234-56fb-cdef-7890123456fb",
+        "nombreEmpleado": "Ana Morales",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "h8k9l0m1-2345-67fc-def0-8901234567fc",
+        "nombreEmpleado": "Pablo Herrera",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "i9l0m1n2-3456-78fd-ef01-9012345678fd",
+        "nombreEmpleado": "Sofía Ramírez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "j0m1n2o3-4567-89fe-f012-0123456789fe",
+        "nombreEmpleado": "Fernando Ruiz",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "k1n2o3p4-5678-90af-0123-1234567890af",
+        "nombreEmpleado": "Gabriela Sánchez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "l2o3p4q5-6789-01b0-1234-2345678901b0",
+        "nombreEmpleado": "Ricardo López",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "m3p4q5r6-7890-12c1-2345-3456789012c1",
+        "nombreEmpleado": "Mariana Díaz",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "n4q5r6s7-8901-23d2-3456-4567890123d2",
+        "nombreEmpleado": "Esteban Flores",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "o5r6s7t8-9012-34e3-4567-5678901234e3",
+        "nombreEmpleado": "Carolina Silva",
+        "horasRegistradasTotales": 2,
+        "tareas": [
+          {
+            "tareaId": "t1a2b3c4-5678-90ab-cdef-1234567890t1",
+            "nombreTarea": "Diseño de base de datos",
+            "horasRegistradas": 2
+          }
+        ]
+      },
+      {
+        "empleadoId": "p6s7t8u9-0123-45f4-5678-6789012345f4",
+        "nombreEmpleado": "Hernán Vargas",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "q7t8u9v0-1234-56g5-6789-7890123456g5",
+        "nombreEmpleado": "Alejandro Morales",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "r8u9v0w1-2345-67h6-7890-8901234567h6",
+        "nombreEmpleado": "Natalia Pérez",
+        "horasRegistradasTotales": 2,
+        "tareas": [
+          {
+            "tareaId": "t1a2b3c4-5678-90ab-cdef-1234567890t1",
+            "nombreTarea": "Diseño de base de datos",
+            "horasRegistradas": 2
+          }
+        ]
+      },
+      {
+        "empleadoId": "s9v0w1x2-3456-78i7-8901-9012345678i7",
+        "nombreEmpleado": "Tomás Gutiérrez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "t0w1x2y3-4567-89j8-9012-0123456789j8",
+        "nombreEmpleado": "Patricia Ortega",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "u1x2y3z4-5678-90k9-0123-1234567890k9",
+        "nombreEmpleado": "Luis Castillo",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "v2y3z4a5-6789-01l0-1234-2345678901l0",
+        "nombreEmpleado": "Elena Navarro",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "w3z4a5b6-7890-12m1-2345-3456789012m1",
+        "nombreEmpleado": "Joaquín Molina",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      }
+    ]
+  },
+  {
+    "id": "740b97d7-c899-44c1-a3f0-3c111c8c2160",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:31:28.333Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      }
+    ]
+  },
+  {
+    "id": "c1c84f8f-2add-4a86-afc5-320815e669d9",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:32:25.383Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      }
+    ]
+  },
+  {
+    "id": "b0a91f1c-607d-490d-b341-61d88144c004",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:35:09.200Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      }
+    ]
+  },
+  {
+    "id": "361edb30-6010-4ce6-b15b-2ec0af76ca4a",
+    "tipo": "Horas trabajadas por empleado",
+    "fechaGeneracion": "2025-09-21T06:35:56.734Z",
+    "contenido": [
+      {
+        "empleadoId": "a1f2d3c4-5678-90ab-cdef-1234567890ab",
+        "nombreEmpleado": "Lucía Fernández",
+        "horasRegistradasTotales": 7,
+        "tareas": [
+          {
+            "tareaId": "t3c4d5e6-7890-12cd-efab-3456789012t3",
+            "nombreTarea": "Configuración de reportes de ventas",
+            "horasRegistradas": 1
+          },
+          {
+            "tareaId": "t4d5e6f7-8901-23de-fabc-4567890123t4",
+            "nombreTarea": "Maquetación de interfaz",
+            "horasRegistradas": 6
+          }
+        ]
+      },
+      {
+        "empleadoId": "b2e3f4d5-6789-01bc-defa-2345678901bc",
+        "nombreEmpleado": "Martín Rojas",
+        "horasRegistradasTotales": 13,
+        "tareas": [
+          {
+            "tareaId": "t4d5e6f7-8901-23de-fabc-4567890123t4",
+            "nombreTarea": "Maquetación de interfaz",
+            "horasRegistradas": 6
+          },
+          {
+            "tareaId": "t5e6f7g8-9012-34ef-abcd-5678901234t5",
+            "nombreTarea": "Pruebas unitarias backend",
+            "horasRegistradas": 7
+          }
+        ]
+      },
+      {
+        "empleadoId": "c3f4g5h6-7890-12cd-efab-3456789012cd",
+        "nombreEmpleado": "Valentina Gómez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "d4g5h6i7-8901-23de-fabc-4567890123de",
+        "nombreEmpleado": "Javier Méndez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "e5h6i7j8-9012-34ef-abcd-5678901234ef",
+        "nombreEmpleado": "Camila Torres",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "f6i7j8k9-0123-45fa-bcde-6789012345fa",
+        "nombreEmpleado": "Diego Castro",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "g7j8k9l0-1234-56fb-cdef-7890123456fb",
+        "nombreEmpleado": "Ana Morales",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "h8k9l0m1-2345-67fc-def0-8901234567fc",
+        "nombreEmpleado": "Pablo Herrera",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "i9l0m1n2-3456-78fd-ef01-9012345678fd",
+        "nombreEmpleado": "Sofía Ramírez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "j0m1n2o3-4567-89fe-f012-0123456789fe",
+        "nombreEmpleado": "Fernando Ruiz",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "k1n2o3p4-5678-90af-0123-1234567890af",
+        "nombreEmpleado": "Gabriela Sánchez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "l2o3p4q5-6789-01b0-1234-2345678901b0",
+        "nombreEmpleado": "Ricardo López",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "m3p4q5r6-7890-12c1-2345-3456789012c1",
+        "nombreEmpleado": "Mariana Díaz",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "n4q5r6s7-8901-23d2-3456-4567890123d2",
+        "nombreEmpleado": "Esteban Flores",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "o5r6s7t8-9012-34e3-4567-5678901234e3",
+        "nombreEmpleado": "Carolina Silva",
+        "horasRegistradasTotales": 2,
+        "tareas": [
+          {
+            "tareaId": "t1a2b3c4-5678-90ab-cdef-1234567890t1",
+            "nombreTarea": "Diseño de base de datos",
+            "horasRegistradas": 2
+          }
+        ]
+      },
+      {
+        "empleadoId": "p6s7t8u9-0123-45f4-5678-6789012345f4",
+        "nombreEmpleado": "Hernán Vargas",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "q7t8u9v0-1234-56g5-6789-7890123456g5",
+        "nombreEmpleado": "Alejandro Morales",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "r8u9v0w1-2345-67h6-7890-8901234567h6",
+        "nombreEmpleado": "Natalia Pérez",
+        "horasRegistradasTotales": 2,
+        "tareas": [
+          {
+            "tareaId": "t1a2b3c4-5678-90ab-cdef-1234567890t1",
+            "nombreTarea": "Diseño de base de datos",
+            "horasRegistradas": 2
+          }
+        ]
+      },
+      {
+        "empleadoId": "s9v0w1x2-3456-78i7-8901-9012345678i7",
+        "nombreEmpleado": "Tomás Gutiérrez",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "t0w1x2y3-4567-89j8-9012-0123456789j8",
+        "nombreEmpleado": "Patricia Ortega",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "u1x2y3z4-5678-90k9-0123-1234567890k9",
+        "nombreEmpleado": "Luis Castillo",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "v2y3z4a5-6789-01l0-1234-2345678901l0",
+        "nombreEmpleado": "Elena Navarro",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      },
+      {
+        "empleadoId": "w3z4a5b6-7890-12m1-2345-3456789012m1",
+        "nombreEmpleado": "Joaquín Molina",
+        "horasRegistradasTotales": 0,
+        "tareas": []
+      }
+    ]
+  },
+  {
+    "id": "35f23c2b-05ba-44c8-99cc-e762e0c01f62",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:36:04.256Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      }
+    ]
+  },
+  {
+    "id": "b6bf159a-1929-4b65-a8ef-6349c741cbb3",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:37:59.255Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 1,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 100
+      }
+    ]
+  },
+  {
+    "id": "6728f986-5cd4-48ef-b952-0aba2383496c",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:38:23.492Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 1,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 100
+      }
+    ]
+  },
+  {
+    "id": "402c8f09-96ff-4450-aee0-9e653109a06f",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:40:10.805Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 1,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 100
+      }
+    ]
+  },
+  {
+    "id": "3b0b847f-a42d-4203-9cab-1b3f7b7df250",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:44:07.464Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 1,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 100
+      }
+    ]
+  },
+  {
+    "id": "0a969b86-a1e5-43a7-a813-7e2693005461",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:45:19.289Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 1,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 100
+      }
+    ]
+  },
+  {
+    "id": "6c8a6b0e-96d8-4c70-b805-d42b26776bec",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:46:59.305Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "81b54eaa-854c-4d35-bab6-feb45e733c4b",
+        "nombreProyecto": "Análisis de e-commerce",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "8e632ba8-73a6-423b-80a5-b337b4307ffd",
+        "nombreProyecto": "Mejora sistema contable",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 2,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 50
+      }
+    ]
+  },
+  {
+    "id": "c1b78b84-bf86-4125-bbf1-e2711f2c8a8a",
+    "tipo": "Avance de proyectos",
+    "fechaGeneracion": "2025-09-21T06:57:58.996Z",
+    "contenido": [
+      {
+        "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+        "nombreProyecto": "Plataforma de E-Learning",
+        "totalTareas": 3,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+        "nombreProyecto": "Sistema de Reservas Hotel",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+        "nombreProyecto": "Dashboard de Ventas",
+        "totalTareas": 1,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "c4d5e6f7-8901-23cd-efab-4567890123cd",
+        "nombreProyecto": "Portal de Recursos Humanos",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "d5e6f7g8-9012-34de-fabc-5678901234de",
+        "nombreProyecto": "App de Delivery Local",
+        "totalTareas": 0,
+        "tareasFinalizadas": 0,
+        "porcentajeAvance": 0
+      },
+      {
+        "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+        "nombreProyecto": "Sistema de Facturación Online",
+        "totalTareas": 2,
+        "tareasFinalizadas": 1,
+        "porcentajeAvance": 50
+      }
+    ]
+  }
+]

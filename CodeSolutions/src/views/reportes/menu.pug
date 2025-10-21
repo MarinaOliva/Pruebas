@@ -1,0 +1,11 @@
+extends ../layouts/main
+
+block contenido
+  h1 #{titulo}
+
+  p Seleccione el reporte que desea generar:
+
+  ul
+    each opcion in opciones
+      li
+        a(href=opcion.url) #{opcion.nombre}

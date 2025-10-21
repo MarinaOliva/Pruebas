@@ -1,0 +1,24 @@
+extends ../layouts/main
+
+block contenido
+  h1 #{titulo}
+
+  //- Mostrar tipo de reporte y fecha
+  p Tipo de reporte: #{reporte.tipo}
+  p Fecha de generación: #{new Date(reporte.fechaGeneracion).toLocaleString()}
+
+  //- Mostrar contenido según el tipo de reporte
+  if reporte.tipo === 'Horas trabajadas por empleado'
+    each emp in reporte.contenido
+      h2 #{emp.nombreEmpleado} (#{emp.horasRegistradasTotales} horas)
+      if emp.tareas.length > 0
+        ul
+          each t in emp.tareas
+            li #{t.nombreTarea} - #{t.horasRegistradas} horas
+      else
+        p No tiene tareas registradas.
+
+  else if reporte.tipo === 'Avance de proyectos'
+    each proy in reporte.contenido
+      h2 #{proy.nombreProyecto} - #{proy.porcentajeAvance}% completado
+      p Tareas finalizadas: #{proy.tareasFinalizadas} / #{proy.totalTareas}
