@@ -1,107 +1,49 @@
 // Importación de módulos
-const fs = require('fs').promises; 
-const path = require('path');
-const Proyecto = require('../models/Proyecto'); 
-
-// Rutas de los archivos JSON
-const archivoProyectos = path.join(__dirname, '../data/proyectos.json');
-const archivoTareas = path.join(__dirname, '../data/tareas.json');
-const archivoEmpleados = path.join(__dirname, '../data/empleados.json');
+const Proyecto = require('../models/Proyecto');
+const Empleado = require('../models/Empleado');
+const Tarea = require('../models/Tarea');
 
 // Lista de estados válidos (coincide con el modelo)
 const estadosValidos = ["Pendiente", "En progreso", "Finalizado", "Cancelado"];
 
-// Función para obtener todos los proyectos
-const obtenerProyectos = async () => {
-  try {
-    const datos = await fs.readFile(archivoProyectos, 'utf8');
-    const proyectos = JSON.parse(datos);
-    return proyectos.filter(p => p?.nombre); 
-  } catch (error) {
-    console.error('Error leyendo proyectos:', error);
-    await fs.writeFile(archivoProyectos, '[]');
-    return [];
-  }
-};
-
-// Función para guardar proyectos en el JSON
-const guardarProyectos = async (proyectos) => {
-  await fs.writeFile(archivoProyectos, JSON.stringify(proyectos, null, 2));
-};
-
-// Función para leer tareas
-const obtenerTareas = async () => {
-  try {
-    const datos = await fs.readFile(archivoTareas, 'utf8');
-    return JSON.parse(datos);
-  } catch (error) {
-    console.error('Error leyendo tareas:', error);
-    await fs.writeFile(archivoTareas, '[]');
-    return [];
-  }
-};
-
-// Función para guardar tareas
-const guardarTareas = async (tareas) => {
-  await fs.writeFile(archivoTareas, JSON.stringify(tareas, null, 2));
-};
-
-// Función para leer empleados
-const obtenerEmpleados = async () => {
-  try {
-    const datos = await fs.readFile(archivoEmpleados, 'utf8');
-    return JSON.parse(datos);
-  } catch (error) {
-    console.error('Error leyendo empleados:', error);
-    await fs.writeFile(archivoEmpleados, '[]');
-    return [];
-  }
-};
-
 // Exportación del controlador con operaciones CRUD
 module.exports = {
- // Listar todos los proyectos
-listar: async (req, res) => {
-  try {
-    const proyectos = await obtenerProyectos();
-    const empleados = await obtenerEmpleados();
-    const tareas = await obtenerTareas();
 
-    const proyectosConNombres = proyectos
-      .filter(p => p.estado !== 'Cancelado' && p.estado !== 'Finalizado')
-      .map(proyecto => {
+  // Listar todos los proyectos
+  listar: async (req, res) => {
+    try {
+      const proyectos = await Proyecto.find({ estado: { $nin: ['Cancelado', 'Finalizado'] } }).lean();
+      const empleados = await Empleado.find().lean();
+      const tareas = await Tarea.find().lean();
+
+      const proyectosConNombres = proyectos.map(proyecto => {
         // IDs de empleados asignados manualmente
-        const idsManual = proyecto.empleadosAsignados || [];
+        const idsManual = proyecto.empleadosAsignados?.map(e => e.toString()) || [];
         // IDs de empleados de tareas de este proyecto
         const idsDeTareas = tareas
-          .filter(t => t.proyectoId === proyecto.id)
-          .flatMap(t => t.empleadosAsignados || []);
+          .filter(t => t.proyectoId?.toString() === proyecto._id.toString())
+          .flatMap(t => t.empleadosAsignados?.map(e => e.toString()) || []);
         // Unir y eliminar duplicados
         const idsUnidos = [...new Set([...idsManual, ...idsDeTareas])];
-        //Obtener objetos de empleados
+        // Obtener objetos de empleados
         const empleadosAsignados = empleados
-          .filter(e => idsUnidos.includes(e.id))
-          .map(e => ({ nombre: e.nombre, rol: e.rol, id: e.id }));
+          .filter(e => idsUnidos.includes(e._id.toString()))
+          .map(e => ({ nombre: e.nombre, rol: e.rol, id: e._id }));
 
         return { ...proyecto, empleadosAsignados };
       });
 
-    
-
-
-    res.render('proyectos/listar', { proyectos: proyectosConNombres });
-  } catch (error) {
-    console.error('Error listando proyectos:', error);
-    res.render('proyectos/listar', { proyectos: [] });
-  }
-},
-
-
+      res.render('proyectos/listar', { proyectos: proyectosConNombres });
+    } catch (error) {
+      console.error('Error listando proyectos:', error);
+      res.render('proyectos/listar', { proyectos: [] });
+    }
+  },
 
   // Mostrar formulario de creación
   mostrarFormularioCrear: async (req, res) => {
     try {
-      const empleados = await obtenerEmpleados();
+      const empleados = await Empleado.find().lean();
       res.render('proyectos/crear', { empleados, estadosValidos, datos: {} });
     } catch (error) {
       console.error('Error cargando empleados para crear proyecto:', error);
@@ -112,10 +54,8 @@ listar: async (req, res) => {
   // Mostrar formulario de edición con los datos del proyecto
   mostrarFormularioEditar: async (req, res) => {
     try {
-      const proyectos = await obtenerProyectos();
-      const proyecto = proyectos.find(p => p.id === req.params.id);
-
-      const empleados = await obtenerEmpleados();
+      const proyecto = await Proyecto.findById(req.params.id).lean();
+      const empleados = await Empleado.find().lean();
       res.render('proyectos/editar', { proyecto, empleados, estadosValidos });
     } catch (error) {
       console.error('Error cargando formulario de edición:', error);
@@ -126,8 +66,6 @@ listar: async (req, res) => {
   // Crear un nuevo proyecto
   crear: async (req, res) => {
     try {
-      const proyectos = await obtenerProyectos();
-
       // Normalizamos los empleados asignados (checkboxes)
       let empleadosAsignados = [];
       if (req.body.empleadosAsignados) {
@@ -136,22 +74,21 @@ listar: async (req, res) => {
           : [req.body.empleadosAsignados];
       }
 
-      const nuevoProyecto = new Proyecto(
-        req.body.nombre,
-        req.body.descripcion,
-        req.body.cliente,
-        req.body.estado || 'Pendiente',
+      const nuevoProyecto = new Proyecto({
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        cliente: req.body.cliente,
+        estado: req.body.estado || 'Pendiente',
         empleadosAsignados
-      );
+      });
 
-      proyectos.push(nuevoProyecto);
-      await guardarProyectos(proyectos);
+      await nuevoProyecto.save();
 
-      console.log('Proyecto creado correctamente:', nuevoProyecto); // para debug
+      console.log('Proyecto creado correctamente:', nuevoProyecto);
       res.redirect('/proyectos');
     } catch (error) {
-      console.error('Error al crear proyecto:', error); // para debug
-      const empleados = await obtenerEmpleados();
+      console.error('Error al crear proyecto:', error);
+      const empleados = await Empleado.find().lean();
       res.render('proyectos/crear', { error: true, datos: req.body, empleados, estadosValidos });
     }
   },
@@ -159,8 +96,6 @@ listar: async (req, res) => {
   // Actualizar un proyecto existente
   actualizar: async (req, res) => {
     try {
-      const proyectos = await obtenerProyectos();
-
       // Normalizamos los empleados asignados (checkboxes)
       let empleadosAsignados = [];
       if (req.body.empleadosAsignados) {
@@ -169,24 +104,22 @@ listar: async (req, res) => {
           : [req.body.empleadosAsignados];
       }
 
-      const actualizados = proyectos.map(p =>
-        p.id === req.params.id
-          ? {
-              ...p,
-              nombre: req.body.nombre || p.nombre,
-              descripcion: req.body.descripcion || p.descripcion,
-              cliente: req.body.cliente || p.cliente,
-              estado: req.body.estado || p.estado,
-              empleadosAsignados
-            }
-          : p
+      await Proyecto.findByIdAndUpdate(
+        req.params.id,
+        {
+          nombre: req.body.nombre,
+          descripcion: req.body.descripcion,
+          cliente: req.body.cliente,
+          estado: req.body.estado,
+          empleadosAsignados
+        },
+        { new: true, runValidators: true }
       );
 
-      await guardarProyectos(actualizados);
       res.redirect('/proyectos');
     } catch (error) {
       console.error('Error al actualizar proyecto:', error);
-      const empleados = await obtenerEmpleados();
+      const empleados = await Empleado.find().lean();
       res.render('proyectos/editar', { error: true, proyecto: req.body, empleados, estadosValidos });
     }
   },
@@ -194,11 +127,7 @@ listar: async (req, res) => {
   // Eliminar un proyecto (baja lógica)
   eliminar: async (req, res) => {
     try {
-      const proyectos = await obtenerProyectos();
-      const actualizados = proyectos.map(p =>
-        p.id === req.params.id ? { ...p, estado: 'Cancelado' } : p
-      );
-      await guardarProyectos(actualizados);
+      await Proyecto.findByIdAndUpdate(req.params.id, { estado: 'Cancelado' });
       res.redirect('/proyectos');
     } catch (error) {
       console.error('Error al eliminar proyecto:', error);
@@ -210,22 +139,20 @@ listar: async (req, res) => {
   quitarEmpleado: async (req, res) => {
     const { idProyecto, idEmpleado } = req.params;
     try {
-      const proyectos = await obtenerProyectos();
-      const proyecto = proyectos.find(p => p.id === idProyecto);
+      const proyecto = await Proyecto.findById(idProyecto);
       if (!proyecto) return res.status(404).send('Proyecto no encontrado');
 
       // Quitar del proyecto
-      proyecto.empleadosAsignados = proyecto.empleadosAsignados?.filter(eId => eId !== idEmpleado) || [];
-      await guardarProyectos(proyectos);
+      proyecto.empleadosAsignados = proyecto.empleadosAsignados.filter(
+        eId => eId.toString() !== idEmpleado
+      );
+      await proyecto.save();
 
       // Quitar de las tareas del proyecto
-      const tareas = await obtenerTareas();
-      const tareasActualizadas = tareas.map(t =>
-        t.proyectoId === idProyecto && t.empleadoId === idEmpleado
-          ? { ...t, empleadoId: null }
-          : t
+      await Tarea.updateMany(
+        { proyectoId: idProyecto },
+        { $pull: { empleadosAsignados: idEmpleado } }
       );
-      await guardarTareas(tareasActualizadas);
 
       res.redirect(`/proyectos/editar/${idProyecto}`);
     } catch (error) {

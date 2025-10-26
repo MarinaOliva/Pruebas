@@ -1,69 +1,52 @@
-const fs = require('fs').promises;
-const { v4: uuidv4 } = require('uuid');
-const path = require('path');
-
-// Archivos JSON
-const archivoEmpleados = path.join(__dirname, '../data/empleados.json');
-const archivoProyectos = path.join(__dirname, '../data/proyectos.json');
-const archivoTareas = path.join(__dirname, '../data/tareas.json');
-const archivoReportes = path.join(__dirname, '../data/reportes.json');
-
-
-// Leer JSON
-async function leerJSON(archivo) {
-  try {
-    const datos = await fs.readFile(archivo, 'utf8');
-    return JSON.parse(datos);
-  } catch {
-    await fs.writeFile(archivo, '[]');
-    return [];
-  }
-}
-
-// Guardar un nuevo reporte
-async function guardarReporte(reporte) {
-  const reportes = await leerJSON(archivoReportes);
-  reportes.push(reporte);
-  await fs.writeFile(archivoReportes, JSON.stringify(reportes, null, 2));
-}
+// Importar módulos y modelos
+const Reporte = require('../models/Reporte');
+const Tarea = require('../models/Tarea');
+const Empleado = require('../models/Empleado');
+const Proyecto = require('../models/Proyecto');
 
 // Controlador de reportes
 module.exports = {
+
   // Reporte 1: Horas trabajadas por empleado
   generarHoras: async (req, res) => {
     try {
       const [tareas, empleados] = await Promise.all([
-        leerJSON(archivoTareas),
-        leerJSON(archivoEmpleados)
+        Tarea.find().lean(),
+        Empleado.find().lean()
       ]);
 
       const contenido = empleados.map(emp => {
-        const tareasEmpleado = tareas.filter(t => t.empleadosAsignados?.includes(emp.id));
+        const tareasEmpleado = tareas.filter(t => 
+          t.empleadosAsignados?.some(id => id.toString() === emp._id.toString())
+        );
+
         return {
-          empleadoId: emp.id,
+          empleadoId: emp._id,
           nombreEmpleado: emp.nombre,
-          horasRegistradasTotales: tareasEmpleado.reduce((sum, t) => sum + parseInt(t.horasRegistradas || 0), 0),
+          horasRegistradasTotales: tareasEmpleado.reduce((sum, t) => sum + (t.horasRegistradas || 0), 0),
           tareas: tareasEmpleado.map(t => ({
-            tareaId: t.id,
+            tareaId: t._id,
             nombreTarea: t.nombre,
-            horasRegistradas: parseInt(t.horasRegistradas || 0)
+            horasRegistradas: t.horasRegistradas || 0
           }))
         };
       });
 
-      const reporte = {
-        id: uuidv4(),
+      const reporte = new Reporte({
         tipo: "Horas trabajadas por empleado",
-        fechaGeneracion: new Date().toISOString(),
+        fechaGeneracion: new Date(),
         contenido
-      };
+      });
 
-      await guardarReporte(reporte);
+      await reporte.save();
       res.render('reportes/listar', { titulo: 'Reporte de Horas', reporte });
 
     } catch (error) {
-      console.error(error);
-      res.status(500).render('error', { titulo: 'Error', mensajeError: 'No se pudo generar el reporte de horas' });
+      console.error('Error generando reporte de horas:', error);
+      res.status(500).render('error', { 
+        titulo: 'Error', 
+        mensajeError: 'No se pudo generar el reporte de horas' 
+      });
     }
   },
 
@@ -71,16 +54,16 @@ module.exports = {
   generarAvance: async (req, res) => {
     try {
       const [tareas, proyectos] = await Promise.all([
-        leerJSON(archivoTareas),
-        leerJSON(archivoProyectos)
+        Tarea.find().lean(),
+        Proyecto.find().lean()
       ]);
 
       const contenido = proyectos.map(proy => {
-        const tareasProyecto = tareas.filter(t => t.proyectoId === proy.id);
+        const tareasProyecto = tareas.filter(t => t.proyectoId?.toString() === proy._id.toString());
         const finalizadas = tareasProyecto.filter(t => t.estado === "Finalizado").length;
 
         return {
-          proyectoId: proy.id,
+          proyectoId: proy._id,
           nombreProyecto: proy.nombre,
           totalTareas: tareasProyecto.length,
           tareasFinalizadas: finalizadas,
@@ -90,48 +73,61 @@ module.exports = {
         };
       });
 
-      const reporte = {
-        id: uuidv4(),
+      const reporte = new Reporte({
         tipo: "Avance de proyectos",
-        fechaGeneracion: new Date().toISOString(),
+        fechaGeneracion: new Date(),
         contenido
-      };
+      });
 
-      await guardarReporte(reporte);
+      await reporte.save();
       res.render('reportes/listar', { titulo: 'Reporte de Avance', reporte });
 
     } catch (error) {
-      console.error(error);
-      res.status(500).render('error', { titulo: 'Error', mensajeError: 'No se pudo generar el reporte de avance' });
+      console.error('Error generando reporte de avance:', error);
+      res.status(500).render('error', { 
+        titulo: 'Error', 
+        mensajeError: 'No se pudo generar el reporte de avance' 
+      });
     }
   },
 
   // Historial de reportes
   historial: async (req, res) => {
     try {
-      const reportes = await leerJSON(archivoReportes);
+      const reportes = await Reporte.find().sort({ fechaGeneracion: -1 }).lean();
       res.render('reportes/historial', { titulo: 'Historial de Reportes', reportes });
     } catch (error) {
-      console.error(error);
-      res.status(500).render('error', { titulo: 'Error', mensajeError: 'No se pudo cargar el historial de reportes' });
+      console.error('Error cargando historial de reportes:', error);
+      res.status(500).render('error', { 
+        titulo: 'Error', 
+        mensajeError: 'No se pudo cargar el historial de reportes' 
+      });
     }
   },
 
   // Ver un reporte en detalle
   verDetalle: async (req, res) => {
     try {
-      const reportes = await leerJSON(archivoReportes);
-      const reporte = reportes.find(r => r.id === req.params.id);
+      const reporte = await Reporte.findById(req.params.id).lean();
 
       if (!reporte) {
-        return res.status(404).render('error', { titulo: 'No encontrado', mensajeError: 'Reporte no existe' });
+        return res.status(404).render('error', { 
+          titulo: 'No encontrado', 
+          mensajeError: 'El reporte no existe' 
+        });
       }
 
-      res.render('reportes/listar', { titulo: `Detalle de ${reporte.tipo}`, reporte });
+      res.render('reportes/listar', { 
+        titulo: `Detalle de ${reporte.tipo}`, 
+        reporte 
+      });
 
     } catch (error) {
-      console.error(error);
-      res.status(500).render('error', { titulo: 'Error', mensajeError: 'No se pudo mostrar el detalle del reporte' });
+      console.error('Error mostrando detalle del reporte:', error);
+      res.status(500).render('error', { 
+        titulo: 'Error', 
+        mensajeError: 'No se pudo mostrar el detalle del reporte' 
+      });
     }
   }
 };

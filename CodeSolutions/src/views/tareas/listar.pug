@@ -20,26 +20,19 @@ block contenido
         each tarea in tareas
           tr
             td= tarea.nombre
-            td
-              - const proyecto = proyectos.find(p => p.id === tarea.proyectoId)
-              = proyecto ? proyecto.nombre : 'No asignado'
+            td= tarea.proyectoId ? tarea.proyectoId.nombre : 'No asignado'
             td= tarea.estado
             td= tarea.horasEstimadas
             td= tarea.horasRegistradas
             td
-              - if (tarea.empleadosAsignados && tarea.empleadosAsignados.length > 0)
-                - const nombresEmpleados = tarea.empleadosAsignados.map(id => {
-                -   const e = empleados.find(emp => emp.id === id)
-                -   return e ? `${e.nombre} (${e.rol})` : 'No asignado'
-                - })
-                = nombresEmpleados.join(', ')
-              - else
+              if tarea.empleadosAsignados && tarea.empleadosAsignados.length > 0
+                = tarea.empleadosAsignados.map(e => `${e.nombre} (${e.rol})`).join(', ')
+              else
                 | No asignado
             td
-              // Solo mostrar Editar y Eliminar si la tarea NO está eliminada ni finalizada
               if tarea.estado !== 'Eliminada' && tarea.estado !== 'Finalizado'
-                a.btn.btn-sm.btn-warning(href=`/tareas/editar/${tarea.id}`) Editar
-                form.form-inline(action=`/tareas/eliminar/${tarea.id}?_method=DELETE` method="POST" style="display:inline")
+                a.btn.btn-sm.btn-warning(href=`/tareas/editar/${tarea._id}`) Editar
+                form.form-inline(action=`/tareas/eliminar/${tarea._id}?_method=DELETE` method="POST" style="display:inline")
                   button.btn.btn-sm.btn-danger.btn-eliminar(type="submit") Eliminar
   else
     p.aviso No hay tareas registradas.

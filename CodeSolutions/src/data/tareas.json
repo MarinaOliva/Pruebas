@@ -1,20 +1,18 @@
 [
   {
-    "id": "t1a2b3c4-5678-90ab-cdef-1234567890t1",
-    "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+    "proyectoNombre": "Plataforma de E-Learning",
     "nombre": "Diseño de base de datos",
     "horasEstimadas": 10,
     "horasRegistradas": 2,
     "empleadosAsignados": [
-      "o5r6s7t8-9012-34e3-4567-5678901234e3",
-      "r8u9v0w1-2345-67h6-7890-8901234567h6"
+      "carolina.silva@codesolutions.com",
+      "natalia.perez@codesolutions.com"
     ],
     "fechaCreacion": "2025-09-16T09:05:00.000Z",
     "estado": "Pendiente"
   },
   {
-    "id": "t2b3c4d5-6789-01bc-defa-2345678901t2",
-    "proyectoId": "a2b3c4d5-6789-01bc-defa-2345678901ab",
+    "proyectoNombre": "Sistema de Reservas Hotel",
     "nombre": "Implementar login y autenticación",
     "horasEstimadas": 8,
     "horasRegistradas": 0,
@@ -23,62 +21,57 @@
     "fechaCreacion": "2025-09-16T09:35:00.000Z"
   },
   {
-    "id": "t3c4d5e6-7890-12cd-efab-3456789012t3",
-    "proyectoId": "b3c4d5e6-7890-12cd-efab-3456789012bc",
+    "proyectoNombre": "Dashboard de Ventas",
     "nombre": "Configuración de reportes de ventas",
     "horasEstimadas": 6,
     "horasRegistradas": 1,
     "empleadosAsignados": [
-      "a1f2d3c4-5678-90ab-cdef-1234567890ab"
+      "lucia.fernandez@codesolutions.com"
     ],
     "estado": "Pendiente",
     "fechaCreacion": "2025-09-16T10:05:00.000Z"
   },
   {
-    "id": "t4d5e6f7-8901-23de-fabc-4567890123t4",
-    "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+    "proyectoNombre": "Plataforma de E-Learning",
     "nombre": "Maquetación de interfaz",
     "horasEstimadas": 12,
     "horasRegistradas": 6,
-    "estado": "Pendiente",
-    "fechaCreacion": "2025-09-16T09:15:00.000Z",
     "empleadosAsignados": [
-      "a1f2d3c4-5678-90ab-cdef-1234567890ab",
-      "b2e3f4d5-6789-01bc-defa-2345678901bc"
-    ]
+      "lucia.fernandez@codesolutions.com",
+      "martin.rojas@codesolutions.com"
+    ],
+    "estado": "Pendiente",
+    "fechaCreacion": "2025-09-16T09:15:00.000Z"
   },
   {
-    "id": "t5e6f7g8-9012-34ef-abcd-5678901234t5",
-    "proyectoId": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
+    "proyectoNombre": "Plataforma de E-Learning",
     "nombre": "Pruebas unitarias backend",
     "horasEstimadas": 8,
     "horasRegistradas": 7,
     "empleadosAsignados": [
-      "b2e3f4d5-6789-01bc-defa-2345678901bc"
+      "martin.rojas@codesolutions.com"
     ],
-    "estado": "En proceso",
+    "estado": "En progreso",
     "fechaCreacion": "2025-09-16T09:20:00.000Z"
   },
   {
-    "id": "e80e2b47-0c08-48e3-b008-d36e0dccb26b",
-    "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+    "proyectoNombre": "Sistema de Facturación Online",
     "nombre": "Revisión",
     "horasEstimadas": 5,
     "horasRegistradas": 4,
     "empleadosAsignados": [
-      "c3f4g5h6-7890-12cd-efab-3456789012cd"
+      "valentina.gomez@codesolutions.com"
     ],
     "estado": "Finalizado",
     "fechaCreacion": "2025-09-21T06:37:28.241Z"
   },
   {
-    "id": "5fdb3751-d5b1-4f9c-a77d-765e5b468f91",
-    "proyectoId": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
+    "proyectoNombre": "Sistema de Facturación Online",
     "nombre": "factura",
     "horasEstimadas": 3,
     "horasRegistradas": 0,
     "empleadosAsignados": [
-      "i9l0m1n2-3456-78fd-ef01-9012345678fd"
+      "sofia.ramirez@codesolutions.com"
     ],
     "estado": "En progreso",
     "fechaCreacion": "2025-09-21T06:46:43.640Z"

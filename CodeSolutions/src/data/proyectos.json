@@ -1,28 +1,25 @@
 [
   {
-    "id": "f1a2b3c4-5678-90ab-cdef-1234567890fa",
     "nombre": "Plataforma de E-Learning",
     "descripcion": "Sistema web para gestión de cursos online, inscripciones y seguimiento de estudiantes.",
     "cliente": "EduTech Solutions",
     "estado": "En progreso",
     "fechaCreacion": "2025-09-16T09:00:00.000Z",
     "empleadosAsignados": [
-      "b2e3f4d5-6789-01bc-defa-2345678901bc"
+      "martin.rojas@codesolutions.com"
     ]
   },
   {
-    "id": "a2b3c4d5-6789-01bc-defa-2345678901ab",
     "nombre": "Sistema de Reservas Hotel",
     "descripcion": "Aplicación para reservas de habitaciones, gestión de pagos y check-in/out automático.",
     "cliente": "HotelPlus",
     "estado": "En progreso",
     "fechaCreacion": "2025-09-16T09:30:00.000Z",
     "empleadosAsignados": [
-      "b2e3f4d5-6789-01bc-defa-2345678901bc"
+      "martin.rojas@codesolutions.com"
     ]
   },
   {
-    "id": "b3c4d5e6-7890-12cd-efab-3456789012bc",
     "nombre": "Dashboard de Ventas",
     "descripcion": "Portal para seguimiento de ventas, indicadores de rendimiento y reportes gráficos.",
     "cliente": "RetailAnalytics",
@@ -30,44 +27,39 @@
     "fechaCreacion": "2025-09-16T10:00:00.000Z",
     "empleadosAsignados": []
   },
- 
- 
   {
-    "id": "c4d5e6f7-8901-23cd-efab-4567890123cd",
     "nombre": "Portal de Recursos Humanos",
     "descripcion": "Aplicación interna para gestión de empleados, nóminas y evaluaciones de desempeño.",
     "cliente": "CODE SOLUTIONS (uso interno)",
     "estado": "Pendiente",
     "fechaCreacion": "2025-09-21T12:00:00.000Z",
     "empleadosAsignados": [
-      "u1x2y3z4-5678-90k9-0123-1234567890k9",
-      "c3f4g5h6-7890-12cd-efab-3456789012cd"
+      "luis.castillo@codesolutions.com",
+      "valentina.gomez@codesolutions.com"
     ]
   },
   {
-    "id": "d5e6f7g8-9012-34de-fabc-5678901234de",
     "nombre": "App de Delivery Local",
     "descripcion": "Plataforma móvil para pedidos de comida y gestión de repartidores en la ciudad.",
     "cliente": "FoodExpress",
     "estado": "En progreso",
     "fechaCreacion": "2025-09-21T12:15:00.000Z",
     "empleadosAsignados": [
-      "h8k9l0m1-2345-67fc-def0-8901234567fc",
-      "i9l0m1n2-3456-78fd-ef01-9012345678fd",
-      "j0m1n2o3-4567-89fe-f012-0123456789fe"
+      "pablo.herrera@codesolutions.com",
+      "sofia.ramirez@codesolutions.com",
+      "fernando.ruiz@codesolutions.com"
     ]
   },
   {
-    "id": "e6f7g8h9-0123-45ef-abcd-6789012345ef",
     "nombre": "Sistema de Facturación Online",
     "descripcion": "Servicio web para emisión de facturas electrónicas y reportes fiscales.",
     "cliente": "FinanzasGlobal",
     "estado": "En progreso",
     "fechaCreacion": "2025-09-21T12:30:00.000Z",
     "empleadosAsignados": [
-      "f6i7j8k9-0123-45fa-bcde-6789012345fa",
-      "o5r6s7t8-9012-34e3-4567-5678901234e3",
-      "p6s7t8u9-0123-45f4-5678-6789012345f4"
+      "diego.castro@codesolutions.com",
+      "carolina.silva@codesolutions.com",
+      "hernan.vargas@codesolutions.com"
     ]
   }
 ]

@@ -3,6 +3,11 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 
+// Conexión a la base de datos
+const connectDB = require('./src/config/db');
+connectDB();
+
+
 const app = express();
 
 // ======================

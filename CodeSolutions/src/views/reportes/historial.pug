@@ -1,4 +1,5 @@
 extends ../layouts/main
+
 block contenido
   h1 Historial de Reportes
 
@@ -12,8 +13,8 @@ block contenido
     tbody
       each r in reportes
         tr
-          td #{r.id}
+          td #{r._id}
           td #{r.tipo}
           td #{new Date(r.fechaGeneracion).toLocaleString()}
           td 
-            a(href=`/reportes/detalle/${r.id}`) Ver detalle
+            a(href=`/reportes/detalle/${r._id}`) Ver detalle
