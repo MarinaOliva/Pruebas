@@ -23,19 +23,19 @@ block contenido
             td
               // Botón de detalles en la columna Acciones
               button.expand-btn.btn.btn-sm.btn-info(
-                data-id=proyecto.id 
+                data-id=proyecto._id 
                 type="button"
               ) Detalles
               
               // Botón Editar
-              a.btn.btn-sm.btn-warning(href=`/proyectos/editar/${proyecto.id}`) Editar
+              a.btn.btn-sm.btn-warning(href=`/proyectos/editar/${proyecto._id}`) Editar
               
               // Form para eliminar usando method-override
-              form(action=`/proyectos/eliminar/${proyecto.id}?_method=DELETE` method="POST" style="display:inline")
+              form(action=`/proyectos/eliminar/${proyecto._id}?_method=DELETE` method="POST" style="display:inline")
                 button.btn.btn-sm.btn-danger(type="submit" onclick="return confirm('¿Estás seguro que deseas eliminar este proyecto?')") Eliminar
 
           //- Fila de detalles oculta
-          tr.detalle(id=`detalle-${proyecto.id}` style="display:none")
+          tr.detalle(id=`detalle-${proyecto._id}` style="display:none")
             td(colspan="4")
               p Descripción: #{proyecto.descripcion}
               p Fecha de creación: #{new Date(proyecto.fechaCreacion).toLocaleDateString()}

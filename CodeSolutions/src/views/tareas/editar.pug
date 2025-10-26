@@ -3,7 +3,8 @@ extends ../layouts/main
 block contenido
   h1 Editar Tarea
 
-  form(action=`/tareas/editar/${tarea.id}?_method=PUT` method="POST")
+  //- Formulario de edición de tarea
+  form(action=`/tareas/editar/${tarea._id}?_method=PUT` method="POST")
     div.form-group
       label(for="nombre") Nombre de la tarea
       input.form-control(type="text" name="nombre" id="nombre" required value=tarea.nombre)
@@ -12,13 +13,14 @@ block contenido
       label(for="proyectoId") Proyecto
       select.form-control(name="proyectoId" id="proyectoId" required)
         each proyecto in proyectos
-          option(value=proyecto.id selected=(tarea.proyectoId === proyecto.id))= proyecto.nombre
+          //- Comparamos con _id en lugar de id
+          option(value=proyecto._id selected=(tarea.proyectoId && tarea.proyectoId.toString() === proyecto._id.toString()))= proyecto.nombre
 
     div.form-group
       label(for="estado") Estado
       select.form-control(name="estado" id="estado" required)
         each estado in estadosValidos
-          // No mostrar "Eliminada" en el formulario de edición
+          //- No mostrar "Eliminada" en el formulario de edición
           if estado !== 'Eliminada'
             option(value=estado selected=(tarea.estado === estado))= estado
 
@@ -36,11 +38,12 @@ block contenido
         if empleados && empleados.length > 0
           each empleado in empleados
             label.checkbox-item
+              //- Comparamos con _id en lugar de id
               input(
                 type="checkbox"
                 name="empleadosAsignados"
-                value=empleado.id
-                checked=(tarea.empleadosAsignados && tarea.empleadosAsignados.includes(empleado.id))
+                value=empleado._id
+                checked=(tarea.empleadosAsignados && tarea.empleadosAsignados.some(e => e.toString() === empleado._id.toString()))
               )
               | #{empleado.nombre} (#{empleado.rol})
         else

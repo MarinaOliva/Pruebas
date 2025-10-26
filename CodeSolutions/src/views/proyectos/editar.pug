@@ -3,7 +3,7 @@ extends ../layouts/main
 block contenido
   h1 Editar Proyecto
 
-  form(action=`/proyectos/editar/${proyecto.id}?_method=PUT` method="POST")
+  form(action=`/proyectos/editar/${proyecto._id}?_method=PUT`, method="POST")
     div.form-group
       label(for="nombre") Nombre del proyecto
       input.form-control(type="text" name="nombre" id="nombre" required value=proyecto.nombre)
@@ -28,11 +28,12 @@ block contenido
         if empleados && empleados.length > 0
           each empleado in empleados
             label.checkbox-item
+              //- Esta es la lógica para comparar los IDs como strings
               input(
-                type="checkbox"
-                name="empleadosAsignados"
-                value=empleado.id
-                checked=(proyecto.empleadosAsignados && proyecto.empleadosAsignados.includes(empleado.id))
+                type="checkbox",
+                name="empleadosAsignados",
+                value=empleado._id,
+                checked=(proyecto.empleadosAsignados && proyecto.empleadosAsignados.map(String).includes(empleado._id.toString()))
               )
               | #{empleado.nombre} (#{empleado.rol})
 

@@ -22,13 +22,13 @@ block contenido
           td #{empleado.area}
           td
             // Botón para expandir detalles
-            button.btn.expand-btn(data-id=empleado.id) Detalles
-            a.btn(href=`/empleados/editar/${empleado.id}`) Editar
-            form(action=`/empleados/eliminar/${empleado.id}?_method=DELETE`, method="POST", style="display:inline")
+            button.btn.expand-btn(data-id=empleado._id) Detalles
+            a.btn(href=`/empleados/editar/${empleado._id}`) Editar
+            form(action=`/empleados/eliminar/${empleado._id}?_method=DELETE`, method="POST", style="display:inline")
               button.btn.eliminar(type="submit", class="btn-eliminar") Eliminar
 
         // Detalles expandibles
-        tr.detalle(id='detalle-' + empleado.id, style="display:none")
+        tr.detalle(id='detalle-' + empleado._id, style="display:none")
           td(colspan="5")
             p Habilidades: #{empleado.habilidades.join(', ')}
             p Especialidad: #{empleado.especialidad}

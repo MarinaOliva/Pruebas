@@ -6,7 +6,7 @@ block contenido
   if error
     p.error #{mensaje}
 
-  form(action=`/empleados/editar/${empleado.id}?_method=PUT`, method="POST")
+  form(action=`/empleados/editar/${empleado._id}?_method=PUT`, method="POST")
     label Nombre:
     input(type="text", name="nombre", value=empleado.nombre)
 
@@ -33,7 +33,7 @@ block contenido
     input(type="text", name="especialidad", value=empleado.especialidad)
 
     label Habilidades (separadas por coma):
-    input(type="text", name="habilidades", value=empleado.habilidades.join(', '))
+    input(type="text", name="habilidades", value=empleado.habilidades ? empleado.habilidades.join(', ') : '')
 
     button.btn.btn-primary(type="submit") Guardar cambios
     a.btn.btn-secondary(href="/empleados") Cancelar

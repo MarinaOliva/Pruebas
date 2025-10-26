@@ -3,7 +3,7 @@ extends ../layouts/main
 block contenido
   h1 Crear Nueva Tarea
 
-  
+  //- Formulario para crear tarea
   form(action="/tareas/crear" method="POST")
     // Nombre de la tarea
     div.form-group
@@ -16,7 +16,8 @@ block contenido
       select.form-control(name="proyectoId" id="proyectoId" required)
         if proyectos && proyectos.length > 0
           each proyecto in proyectos
-            option(value=proyecto.id)= proyecto.nombre
+            //- Usar _id en lugar de id
+            option(value=proyecto._id)= proyecto.nombre
         else
           option(disabled selected) No hay proyectos disponibles
 
@@ -26,7 +27,6 @@ block contenido
       select.form-control(name="estado" id="estado" required)
         option(value="Pendiente") Pendiente
         option(value="En progreso") En progreso
-
 
     // Horas estimadas
     div.form-group
@@ -45,10 +45,11 @@ block contenido
         if empleados && empleados.length > 0
           each empleado in empleados
             label.checkbox-item
+              //- Usar _id en lugar de id
               input(
                 type="checkbox"
                 name="empleadosAsignados"
-                value=empleado.id
+                value=empleado._id
               )
               | #{empleado.nombre} (#{empleado.rol})
         else
